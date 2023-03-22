@@ -6,7 +6,7 @@ import random
 BOARD_COLS = 7
 BOARD_ROWS = 6
 
-scoreboard = open("scoreboard.csv", "a")
+scoreboard = open("Main\scoreboard.csv", "a")
 playersName = ["BotOne", "BotTwo"]
 
 class Board():
@@ -84,7 +84,7 @@ class Board():
                 self.print_board()
                 print(f"{last_letter} is the winner!")
 
-                scoreboard = open("scoreboard.csv", "r")
+                scoreboard = open("Main\scoreboard.csv", "r")
                 reader = csv.reader(scoreboard)
                 rows = list(reader)
 
@@ -93,7 +93,7 @@ class Board():
 
                 scoreboard.close()
 
-                scoreboard = open("scoreboard.csv", "w")
+                scoreboard = open("Main\scoreboard.csv", "w")
                 if last_letter == "X":
                     numX = int(numX) + 1
                     new = "X" + "," + str(numX) + "\n" + "O" + "," + str(numO)
